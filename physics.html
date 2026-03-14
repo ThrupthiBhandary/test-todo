@@ -1,0 +1,59 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics</title>
+</head>
+<body>
+    <h1>Physics</h1>
+    <canvas id="physicsCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('physicsCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Initialize canvas dimensions
+        const width = canvas.width = window.innerWidth;
+        const height = canvas.height = window.innerHeight;
+
+        // Define physics variables
+        let positionX = width / 2;
+        let velocityX = 0;
+
+        // Update physics
+        function updatePhysics() {
+            // Update velocity based on gravity
+            velocityX += 0.1; // Adjust the acceleration due to gravity
+            positionX += velocityX;
+
+            // Check for boundary collisions
+            if (positionX + 50 > width) {
+                positionX = width - 50;
+                velocityX *= -0.5; // Reverse direction
+            } else if (positionX < 50) {
+                positionX = 50;
+                velocityX *= -0.5; // Reverse direction
+            }
+
+            // Clear the canvas
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw a circle at the updated position
+            ctx.beginPath();
+            ctx.arc(positionX, height / 2, 25, 0, Math.PI * 2);
+            ctx.fillStyle = 'red';
+            ctx.fill();
+        }
+
+        // Game loop
+        function gameLoop() {
+            requestAnimationFrame(gameLoop);
+            updatePhysics();
+        }
+
+        // Start the game loop
+        gameLoop();
+    </script>
+</body>
+</html>
