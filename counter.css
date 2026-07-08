@@ -1,0 +1,9 @@
+@import 'counter.css';
+
+body {
+  background-color: lightgray;
+}
+
+button {
+  margin-top: 20px;
+}

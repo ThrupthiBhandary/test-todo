@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,6 +66,21 @@ html
             cursor: pointer;
             margin-right: 5px;
         }
+        
+        /* Add toggleBackground function and button styling */
+        @keyframes toggleBackground {
+          from {background-color: #f4f4f4;}
+          to {background-color: white;}
+        }
+
+        .toggleButton {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            animation: toggleBackground 3s infinite alternate;
+        }
     </style>
 </head>
 <body>
@@ -78,6 +92,7 @@ html
             <input type="tel" placeholder="Phone">
             <button type="submit">Submit</button>
         </div>
+        <button class="toggleButton">Toggle Background</button>
     </div>
 </body>
 </html>
