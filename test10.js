@@ -14,3 +14,19 @@ class Counter {
 }
 
 new Counter();
+
+// CSS file for changing background color
+document.write(`
+<link rel="stylesheet" href="test10.css">
+`);
+
+function changeBackground() {
+  const body = document.body;
+  const currentColor = body.style.backgroundColor || 'white';
+  
+  // Define your desired colors here
+  const colors = ['red', 'green', 'blue', 'yellow'];
+  
+  let newColorIndex = (colors.indexOf(currentColor) + 1) % colors.length;
+  body.style.backgroundColor = colors[newColorIndex];
+}
