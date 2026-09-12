@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+</head>
+<body>
+    <h1>Student Information Form</h1>
+    <form id="studentForm" action="/submit-form" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br>
+        
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone"><br>
+        
+        <label for="course">Course:</label><br>
+        <select id="course" name="course">
+            <option value="">Select a course</option>
+            <option value="computer-science">Computer Science</option>
+            <option value="business-administration">Business Administration</option>
+            <option value="engineering">Engineering</option>
+        </select><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
